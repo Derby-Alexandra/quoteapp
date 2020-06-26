@@ -1,27 +1,24 @@
 {
-  "name": "project",
-  "version": "1",
-  "description": "milestones",
-  "engines": {
-    "node": "12.x"
-  },
+  "name": "theequoteapp",
+  "version": "1.0.0",
+  "description": "\"# secondproject\" \r \"# quoteapp\"",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Derby-Alexandra/quoteapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Derby-Alexandra/quoteapp/issues"
+  },
+  "homepage": "https://github.com/Derby-Alexandra/quoteapp#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "ejs": "^2.5.6",
-    "express": "^4.15.2"
-  },
-  "devDependencies": {
-    "got": "^11.3.0",
-    "tape": "^4.7.0"
-  },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ]
+    "pg": "^8.2.1"
+  }
 }
