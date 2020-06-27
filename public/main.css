@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Fredericka+the+Great&family=Open+Sans+Condensed:wght@300&family=Roboto&display=swap');
+
+/*
+font-family: 'Amatic SC', cursive;
+font-family: 'Fredericka the Great', cursive;
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+/*
+Black Coral: 59656F (MAIN FONT COLOR)
+Raisin Black: 1D1E2C (DARK BLACK IF NEEDED)
+Tart Orange: F0544F (ACCENT COLOR)
+Honeydew: F1FAEE (BODY, HEADER, FOOTER COLOR)
+Opal: C6D8D3 (HTML ROOT COLOR)
+*/
+
+* { margin: 0; box-sizing: border-box; } 
+
+:root { background-color: #C6D8D3; }
+
+/*header styles*/
+
+h1 {
+    font-size: 3em;
+    color: #59656F;
+    font-family: 'Amatic SC', cursive;
+    margin-top: -10px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #59656F;
+}
+
+a:hover { color: #F1FAEE; }
+
+nav {
+    line-height: 1em;
+    margin-top: -20px;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+/*    margin-left: -40px;*/
+    padding: 1px;
+}
+
+.link_font {
+    display: inline-block;
+    border: transparent 2px;
+    border-radius: 4px;
+    padding: 5px;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.link_font:hover {
+        background-color: #59656F;
+}
+
+/*body styles*/
+
+header, body, footer {
+    margin: 1.25rem auto;
+    padding: .5rem;
+    max-width: 800px;
+    background-color: #F1FAEE;
+    border-radius: 5px;
+}
+
+body { 
+    font-size: 26px; 
+    font-family: 'Fredericka the Great', cursive;
+    color: #59656F;
+    text-align: center;
+
+}
+
+main {
+    line-height: 1.5em;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+h2 {
+    font-size: 2em;
+    color: #59656F;
+    text-align: center;
+}
+
+button {
+    border: solid 1px;
+    border-radius: 2px;
+    padding: 1px;
+    font-family: 'Amatic SC', cursive;
+    color: #59656F;
+    background-color: #F1FAEE;
+    margin: 2px;
+}
+
+button:active {
+    color: #F1FAEE;
+    background-color: #F0544F;
+}
+
+/*image styles*/
+
+.imagestyles {
+    max-width: 75%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px #59656F;
+}
+
+/*footer styles*/
+
+footer {
+    font-size: 0.7em;
+    padding-top: 10px;
+    text-align: center;
+    background-color: #F1FAEE;
+    font-family: 'Amatic SC', cursive;
+}
