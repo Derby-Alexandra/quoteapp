@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>HTML Form</title>
+    <meta name="description" content="html form">
+    <meta name="author" content="form">
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <form action="/costcalculator" method="POST">
+        <label for="weight">Input Weight:</label><br>
+        <input type="number" id="weight" name="weight"><br>
+        <br>
+        <label for="mailtype">Mail Type:</label><br>
+        <select name="mailtype">
+            <option>Letters (Stamped)</option>
+            <option>Letters (Metered)</option>
+            <option>Large Envelopes (Flats)</option>
+            <option>First-Class Package Service—Retail</option>
+        </select>
+        <br><br>
+        <button type="submit">Calculate</button>
+    </form>
+</body>
+</html>
