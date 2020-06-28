@@ -90,17 +90,24 @@ h2 {
     text-align: center;
 }
 
-button {
+button, .button_link {
     border: solid 1px;
-    border-radius: 2px;
-    padding: 1px;
+    border-radius: 4px;
+    padding: 3px;
     font-family: 'Amatic SC', cursive;
     color: #59656F;
     background-color: #F1FAEE;
     margin: 2px;
+    border-color: #59656F;
 }
 
-button:active {
+button:hover, .button_link:hover {
+    color: #F1FAEE;
+    background-color: #59656F;
+    cursor: pointer;
+}
+
+button:active, .button_link:active {
     color: #F1FAEE;
     background-color: #F0544F;
 }
