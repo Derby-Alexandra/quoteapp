@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Thee Quote App</title>
+    <meta name="description" content="quote app login page">
+    <meta name="author" content="alexandra derby">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <header>
+        <h1>Thee Quote App</h1>
+        <nav>
+            <ul>
+                <li class="link_font"><a href="/">Generate Quotes</a></li> | 
+                <li class="link_font"><a href="login">Account Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <p>Login:</p>
+            <form action="account" method="get">
+                <label for="email">Email Address:</label>
+                <input type="email" name="email"><br>
+                <label for="password">Password:</label>
+                <input type="password" name="password"><br>
+                <input type="submit" class="button_link"><br><br>
+            </form>
+            <p>Create a new account:</p>
+            <form action="account/login" method="get">
+                <label for="firstname">First Name:</label>
+                <input type="text" name="firstname"><br>
+                <label for="email">Email Address:</label>
+                <input type="email" name="email"><br>
+                <label for="password">Password:</label>
+                <input type="password" name="password"><br>
+                <input type="submit" class="button_link"><br><br>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2020 | Alexandra Derby | Canada | <a href="http://www.byui.edu/online">BYU Idaho Online Learning</a></p>
+    </footer>
+</body>
+</html>

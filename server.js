@@ -25,6 +25,15 @@ app.get('/generate', (req, res) => {
         res.render('index', {quote: quotes[random_index].text, author: quotes[random_index].author})
     })
 })
+app.get('/login', (req, res) => {
+    res.render('login')
+})
+app.get('/account', (req, res) => {
+    res.render('account')
+})
+app.get('/view', (req, res) => {
+    res.render('view')
+})
    
 //
 //var sql = "SELECT * FROM siteuser";
