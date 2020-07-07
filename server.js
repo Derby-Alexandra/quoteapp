@@ -29,10 +29,22 @@ app.get('/login', (req, res) => {
     res.render('login')
 })
 app.get('/account', (req, res) => {
-    res.render('account')
+        get_quote(function(quotes) {
+        let random_index = Math.floor((Math.random() * quotes.length) + 1)
+        res.render('account', {quote: quotes[random_index].text, author: quotes[random_index].author})
+    })
+})
+app.get('/generate2', (req, res) => {
+    get_quote(function(quotes) {
+        let random_index = Math.floor((Math.random() * quotes.length) + 1)
+        res.render('account', {quote: quotes[random_index].text, author: quotes[random_index].author})
+    })
 })
 app.get('/view', (req, res) => {
     res.render('view')
+})
+app.get('/save', (req, res) => {
+    res.render('save')
 })
    
 //

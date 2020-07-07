@@ -111,7 +111,16 @@ button:active, .button_link:active {
     color: #F1FAEE;
     background-color: #F0544F;
 }
-
+.formgrid {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: left;
+    margin-left: 75px;
+}
+.leftalign{
+    text-align: left;
+    margin-left: 75px;
+}
 /*image styles*/
 
 .imagestyles {

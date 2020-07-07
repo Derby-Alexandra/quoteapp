@@ -20,23 +20,37 @@
     </header>
     <main>
         <div>
-            <p>Login:</p>
+            <p class="leftalign">Login to your account:</p>
             <form action="account" method="get">
-                <label for="email">Email Address:</label>
-                <input type="email" name="email"><br>
-                <label for="password">Password:</label>
-                <input type="password" name="password"><br>
-                <input type="submit" class="button_link"><br><br>
+                <div class="formgrid">
+                    <div>
+                        <label for="email">Email Address:</label><br>
+                        <label for="password">Password:</label><br>
+                    </div>
+                    <div>
+                        <input type="email" name="email"><br>
+                        <input type="password" name="password"><br>
+                        <input type="submit" class="button_link"><br><br>
+                    </div>
+                </div>
+                
             </form>
-            <p>Create a new account:</p>
+            <p class="leftalign">Create a new account:</p>
             <form action="login" method="get">
-                <label for="firstname">First Name:</label>
-                <input type="text" name="firstname"><br>
-                <label for="email">Email Address:</label>
-                <input type="email" name="email"><br>
-                <label for="password">Password:</label>
-                <input type="password" name="password"><br>
-                <input type="submit" class="button_link"><br><br>
+                <div class="formgrid">
+                    <div>
+                        <label for="firstname">First Name:</label><br>
+                        <label for="email">Email Address:</label><br>
+                        <label for="password">Password:</label><br>
+                    </div>
+                    <div>
+                        <input type="text" name="firstname"><br>
+                        <input type="email" name="email"><br>
+                        <input type="password" name="password"><br>
+                        <input type="submit" class="button_link"><br><br>
+                    </div>
+                </div>
+                
             </form>
         </div>
     </main>
