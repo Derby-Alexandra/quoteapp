@@ -46,6 +46,9 @@ app.get('/view', (req, res) => {
 app.get('/save', (req, res) => {
     res.render('save')
 })
+app.get('/success', (req, res) => {
+    res.render('success')
+})
    
 //
 //var sql = "SELECT * FROM siteuser";
