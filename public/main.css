@@ -101,7 +101,7 @@ button, .button_link {
     border-color: #59656F;
 }
 
-button:hover, .button_link:hover {
+button:hover, .button_link:hover, #exit:hover {
     color: #F1FAEE;
     background-color: #59656F;
     cursor: pointer;
@@ -121,13 +121,27 @@ button:active, .button_link:active {
     text-align: left;
     margin-left: 75px;
 }
-/*image styles*/
 
-.imagestyles {
-    max-width: 75%;
-    margin: auto;
-    border-radius: 10px;
-    box-shadow: 5px 5px #59656F;
+#save_categories {
+    background-color: #F1FAEE;
+    position: absolute;
+    margin: 0;
+    top: 40vh;
+    border: 1px solid #59656F;
+    border-radius: 5px;   
+    padding: 20px;
+    display: none;
+    box-shadow: 10px 10px #59656F;
+}
+#exit {
+    position: absolute;
+    top: 110px;
+    border: 1px solid #59656F;
+    border-radius: 4px;  
+    font-family: 'Amatic SC', cursive;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: -15px;
 }
 
 /*footer styles*/

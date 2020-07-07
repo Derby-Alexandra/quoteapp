@@ -43,9 +43,9 @@ app.get('/generate2', (req, res) => {
 app.get('/view', (req, res) => {
     res.render('view')
 })
-app.get('/save', (req, res) => {
-    res.render('save')
-})
+//app.get('/save', (req, res) => {
+//    toggle_modal()
+//})
 app.get('/success', (req, res) => {
     res.render('success')
 })

@@ -26,11 +26,29 @@
             </p>
             <br>
             <a class="button_link" href="generate2">Generate</a>
-            <a class="button_link" href="save">Save Quote</a>
+            <a class="button_link" onclick="toggle_modal()">Save Quote</a>
+            <div id="save_categories">
+                <div id="exit" onclick="exit_modal()">X</div>
+                <p>Choose the category you wish to save your quote into:</p>
+                <br>
+                <a class="button_link" href="#">Funny</a>
+                <a class="button_link" href="#">Inspirational</a>
+                <a class="button_link" href="#">Spiritual</a>
+                <a class="button_link" href="#">Famous</a>
+                <a class="button_link" href="#">Other</a>
+            </div>
         </div>
     </main>
     <footer>
         <p>&copy; 2020 | Alexandra Derby | Canada | <a href="http://www.byui.edu/online">BYU Idaho Online Learning</a></p>
     </footer>
+    <script>
+    function toggle_modal() {
+        document.getElementById('save_categories').style.display = "block";
+    }
+    function exit_modal() {
+        document.getElementById('save_categories').style.display = "none";
+    }
+    </script>
 </body>
 </html>
