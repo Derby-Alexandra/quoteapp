@@ -67,7 +67,7 @@ app.post('/accountlogin', (req, res) => {
     });
 })
 app.post('/savequote', (req, res) => {
-    var sql = `INSERT INTO quote (categoryid, quote) VALUES (${req.body.categoryid}, '${req.body.quote}')`
+    var sql = `INSERT INTO quote (categoryid, quote) VALUES (${req.body.categoryid}, '${req.body.quote}') RETURNING id`
     pool.query(sql, function(err, result) {
         console.log('err: ', err)
         console.log('result: ', result)
