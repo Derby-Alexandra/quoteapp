@@ -55,7 +55,7 @@ app.post('/accountlogin', (req, res) => {
                 res.render('account', {quote: quotes[random_index].text, author: quotes[random_index].author})
             })
         } else {
-            res.render('login')
+            res.render('login', {loginFailed: true})
         }
     });
 })
