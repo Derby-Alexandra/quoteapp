@@ -51,7 +51,7 @@ app.post('/accountlogin', (req, res) => {
 //    console.log(req.body);
     var sql = `SELECT * FROM siteuser WHERE email = '${req.body.email}'`;
     pool.query(sql, function(err, result) {
-        if (results.password == req.body.password) {
+        if (result.password == req.body.password) {
             get_quote(function(quotes) {
                 let random_index = Math.floor((Math.random() * quotes.length) + 1)
                 res.render('account', {quote: quotes[random_index].text, author: quotes[random_index].author})
