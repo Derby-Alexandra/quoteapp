@@ -8,6 +8,7 @@ const bodyParser = require('body-parser')
 const connectionString = process.env.DATABASE_URL
 const pool = new Pool({connectionString: connectionString})
 const https = require('https');
+var session = require('express-session');
 
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -56,7 +57,7 @@ app.post('/accountlogin', (req, res) => {
     var sql = `SELECT * FROM siteuser WHERE email = '${req.body.email}'`;
     pool.query(sql, function(err, result) {
         if (result.rows[0].password == req.body.password) {
-            console.log(result.rows);
+            req.session.user_id = result.rows[0].id
             get_quote(function(quotes) {
                 let random_index = Math.floor((Math.random() * quotes.length) + 1)
                 res.render('account', {quote: quotes[random_index].text, author: quotes[random_index].author})
@@ -69,18 +70,25 @@ app.post('/accountlogin', (req, res) => {
 app.post('/savequote', (req, res) => {
     var sql = `INSERT INTO quote (categoryid, quote) VALUES (${req.body.categoryid}, '${req.body.quote}') RETURNING id`
     pool.query(sql, function(err, result) {
-        console.log('err: ', err)
-        console.log('result: ', result)
         // check if the insert worked
         if (result.rows[0]) {
             // if it worked, then get the newly generated id for the quote
-            // and add a linking record (user_has_quote)
-            console.log('result.rows[0]: ', result.rows[0])
-            res.json({quoteWasSaved: true})
+            // and add a linking record (userhasquote)
+            let quote_id = result.rows[0].id
+            let user_id = req.session.user_id
+            sql = `INSERT INTO userhasquote (userid, quoteid) VALUES (${user_id}, ${quote_id})`
+            pool.query(sql, function(err, result) {
+                // check if the insert worked
+                if (result.rowCount === 1) {
+                    res.json({quoteWasSaved: true})
+                } else {
+                    res.json({quoteWasSaved: false, error: err})
+                }
+            })
         } else {
             res.json({quoteWasSaved: false, error: err})
         }
-    });
+    })
 })
 
 //
