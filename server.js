@@ -37,15 +37,12 @@ app.get('/generate2', (req, res) => {
 app.get('/view', (req, res) => {
     res.render('view')
 })
-//app.get('/save', (req, res) => {
-//    toggle_modal()
-//})
 app.post('/createaccount', (req, res) => {
 //    console.log(req.body);
     var sql = `INSERT INTO siteuser (firstname, email, password) VALUES ('${req.body.firstname}', '${req.body.email}', '${req.body.password}')`;
     pool.query(sql, function(err, result) {
         res.render('success')
-    });  
+    });
 })
 app.post('/accountlogin', (req, res) => {
 //    console.log(req.body);
@@ -56,7 +53,7 @@ app.post('/accountlogin', (req, res) => {
             get_quote(function(quotes) {
                 let random_index = Math.floor((Math.random() * quotes.length) + 1)
                 res.render('account', {quote: quotes[random_index].text, author: quotes[random_index].author})
-            }) 
+            })
         } else {
             res.render('login')
         }
