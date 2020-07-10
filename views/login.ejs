@@ -21,15 +21,15 @@
     <main>
         <div>
             <p class="leftalign">Login to your account:</p>
-            <form action="account" method="get">
+            <form action="/accountlogin" method="post">
                 <div class="formgrid">
                     <div>
                         <label for="email">Email Address:</label><br>
                         <label for="password">Password:</label><br>
                     </div>
                     <div>
-                        <input type="email" name="email"><br>
-                        <input type="password" name="password"><br>
+                        <input type="email" name="email" required><br>
+                        <input type="password" name="password" required><br>
                         <input type="submit" value="login" class="button_link"><br><br>
                     </div>
                 </div>
@@ -44,9 +44,9 @@
                         <label for="password">Password:</label><br>
                     </div>
                     <div>
-                        <input type="text" name="firstname"><br>
-                        <input type="email" name="email"><br>
-                        <input type="password" name="password"><br>
+                        <input type="text" name="firstname" required><br>
+                        <input type="email" name="email" required><br>
+                        <input type="password" name="password" required><br>
                         <input type="submit" value="create" class="button_link"><br><br>
                     </div>
                 </div>

@@ -28,12 +28,6 @@ app.get('/generate', (req, res) => {
 app.get('/login', (req, res) => {
     res.render('login')
 })
-app.get('/account', (req, res) => {
-        get_quote(function(quotes) {
-        let random_index = Math.floor((Math.random() * quotes.length) + 1)
-        res.render('account', {quote: quotes[random_index].text, author: quotes[random_index].author})
-    })
-})
 app.get('/generate2', (req, res) => {
     get_quote(function(quotes) {
         let random_index = Math.floor((Math.random() * quotes.length) + 1)
@@ -50,12 +44,20 @@ app.post('/createaccount', (req, res) => {
 //    console.log(req.body);
     var sql = `INSERT INTO siteuser (firstname, email, password) VALUES ('${req.body.firstname}', '${req.body.email}', '${req.body.password}')`;
     pool.query(sql, function(err, result) {
-        if (err) {
-            console.log("Error in query: ")
-            console.log(err)
-        }
         res.render('success')
     });  
+})
+app.post('/accountlogin', (req, res) => {
+    var sql = `SELECT * FROM siteuser WHERE email = '${req.body.email}'`;
+    pool.query(sql, function(err, result) {
+        if (results.password == req.body.password) {
+            get_quote(function(quotes) {
+            let random_index = Math.floor((Math.random() * quotes.length) + 1)
+            res.render('account', {quote: quotes[random_index].text, author: quotes[random_index].author})
+        } else {
+            console.log('Wrong email or password')              
+        }
+    )} 
 })
    
 //
