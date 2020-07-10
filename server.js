@@ -52,6 +52,7 @@ app.post('/accountlogin', (req, res) => {
     var sql = `SELECT * FROM siteuser WHERE email = '${req.body.email}'`;
     pool.query(sql, function(err, result) {
         if (result.password == req.body.password) {
+            console.log(result.password);
             get_quote(function(quotes) {
                 let random_index = Math.floor((Math.random() * quotes.length) + 1)
                 res.render('account', {quote: quotes[random_index].text, author: quotes[random_index].author})
@@ -62,7 +63,6 @@ app.post('/accountlogin', (req, res) => {
         }
     });
 })
-
 //
 //var sql = "SELECT * FROM siteuser";
 //pool.query(sql, function(err, result) {
@@ -75,7 +75,6 @@ app.post('/accountlogin', (req, res) => {
 //    console.log("Back from DB with result:")
 //    console.log(result.rows)
 //});  
-
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
