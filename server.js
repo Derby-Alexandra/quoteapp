@@ -46,8 +46,16 @@ app.get('/view', (req, res) => {
 //app.get('/save', (req, res) => {
 //    toggle_modal()
 //})
-app.get('/success', (req, res) => {
-    res.render('success')
+app.post('/createaccount', (req, res) => {
+//    console.log(req.body);
+    var sql = `INSERT INTO siteuser (firstname, user, password) VALUES ('${req.body.firstname}', '${req.body.user}', '${req.body.password}')`;
+    pool.query(sql, function(err, result) {
+        if (err) {
+            console.log("Error in query: ")
+            console.log(err)
+        }
+        res.render('success')
+    });  
 })
    
 //
