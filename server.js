@@ -59,7 +59,7 @@ app.post('/accountlogin', (req, res) => {
             }) 
         } else {
             res.render('login')
-            document.getElementById("login_message").style.display = "block";
+            body.getElementById("login_message").style.display = "block";
         }
     });
 })
