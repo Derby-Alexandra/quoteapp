@@ -48,7 +48,7 @@ app.get('/view', (req, res) => {
 //})
 app.post('/createaccount', (req, res) => {
 //    console.log(req.body);
-    var sql = `INSERT INTO siteuser (firstname, user, password) VALUES ('${req.body.firstname}', '${req.body.user}', '${req.body.password}')`;
+    var sql = `INSERT INTO siteuser (firstname, email, password) VALUES ('${req.body.firstname}', '${req.body.email}', '${req.body.password}')`;
     pool.query(sql, function(err, result) {
         if (err) {
             console.log("Error in query: ")
