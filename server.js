@@ -69,6 +69,8 @@ app.post('/accountlogin', (req, res) => {
 app.post('/savequote', (req, res) => {
     var sql = `INSERT INTO quote (categoryid, quote) VALUES (${req.body.categoryid}, '${req.body.quote}')`
     pool.query(sql, function(err, result) {
+        console.log('err: ', err)
+        console.log('result: ', result)
         // check if the insert worked
         if (result.rows[0]) {
             // if it worked, then get the newly generated id for the quote
