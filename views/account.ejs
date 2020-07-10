@@ -51,11 +51,11 @@
     }
     function savequote(categoryid) {
         let quote = document.getElementById('quote').innerText
-        const Http = new XMLHttpRequest();
-        const url='/savequote';
-        Http.open("POST", url);
-        Http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        Http.send(`categoryid=${categoryid}&quote=${quote}`);
+        const Http = new XMLHttpRequest()
+        const url='/savequote'
+        Http.open("POST", url)
+        Http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+        Http.send(`categoryid=${categoryid}&quote=${quote}`)
     }
     </script>
 </body>
