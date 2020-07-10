@@ -9,6 +9,7 @@ const connectionString = process.env.DATABASE_URL
 const pool = new Pool({connectionString: connectionString})
 const https = require('https');
 
+app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(__dirname + '/public'));
 app.set('views', path.join(__dirname, 'views'))
@@ -66,19 +67,17 @@ app.post('/accountlogin', (req, res) => {
     });
 })
 app.post('/savequote', (req, res) => {
-//    console.log(req.body);
     var sql = `INSERT INTO quote (categoryid, quote) VALUES (${req.body.categoryid}, '${req.body.quote}')`
     pool.query(sql, function(err, result) {
-        
-//        if (result.rows[0].password == req.body.password) {
-//            console.log(result.rows);
-//            get_quote(function(quotes) {
-//                let random_index = Math.floor((Math.random() * quotes.length) + 1)
-//                res.render('account', {quote: quotes[random_index].text, author: quotes[random_index].author})
-//            })
-//        } else {
-//            res.render('login', {loginFailed: true})
-//        }
+        // check if the insert worked
+        if (result.rows[0]) {
+            // if it worked, then get the newly generated id for the quote
+            // and add a linking record (user_has_quote)
+            console.log('result.rows[0]: ', result.rows[0])
+            res.json({quoteWasSaved: true})
+        } else {
+            res.json({quoteWasSaved: false, error: err})
+        }
     });
 })
 

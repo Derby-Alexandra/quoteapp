@@ -21,7 +21,7 @@
     </header>
     <main>
         <div>
-            <p><%= quote %><br>
+            <p id="quote"><%= quote %><br>
                 - <%= author %>
             </p>
             <br>
@@ -50,12 +50,12 @@
         document.getElementById('save_categories').style.display = "none";
     }
     function savequote(categoryid) {
-        let saved_quote = {categoryid, quote: <%= quote %>}
+        let quote = document.getElementById('quote').innerText
         const Http = new XMLHttpRequest();
         const url='/savequote';
         Http.open("POST", url);
-        Http.setRequestHeader("Content-Type", "application/json");
-        Http.send(saved_quote);
+        Http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        Http.send(`categoryid=${categoryid}&quote=${quote}`);
     }
     </script>
 </body>
