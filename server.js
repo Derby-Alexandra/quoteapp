@@ -37,6 +37,9 @@ app.get('/generate2', (req, res) => {
 app.get('/view', (req, res) => {
     res.render('view')
 })
+app.get('/account', (req, res) => {
+    res.render('account')
+})
 app.post('/createaccount', (req, res) => {
 //    console.log(req.body);
     var sql = `INSERT INTO siteuser (firstname, email, password) VALUES ('${req.body.firstname}', '${req.body.email}', '${req.body.password}')`;
