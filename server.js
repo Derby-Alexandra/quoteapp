@@ -65,6 +65,23 @@ app.post('/accountlogin', (req, res) => {
         }
     });
 })
+app.post('/savequote', (req, res) => {
+//    console.log(req.body);
+    var sql = `INSERT INTO quote (categoryid, quote) VALUES (${req.body.categoryid}, '${req.body.quote}')`
+    pool.query(sql, function(err, result) {
+        
+//        if (result.rows[0].password == req.body.password) {
+//            console.log(result.rows);
+//            get_quote(function(quotes) {
+//                let random_index = Math.floor((Math.random() * quotes.length) + 1)
+//                res.render('account', {quote: quotes[random_index].text, author: quotes[random_index].author})
+//            })
+//        } else {
+//            res.render('login', {loginFailed: true})
+//        }
+    });
+})
+
 //
 //var sql = "SELECT * FROM siteuser";
 //pool.query(sql, function(err, result) {

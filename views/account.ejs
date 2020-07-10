@@ -31,11 +31,11 @@
                 <div id="exit" onclick="exit_modal()">X</div>
                 <p>Choose the category you wish to save your quote into:</p>
                 <br>
-                <a class="button_link" href="#">Funny</a>
-                <a class="button_link" href="#">Inspirational</a>
-                <a class="button_link" href="#">Spiritual</a>
-                <a class="button_link" href="#">Famous</a>
-                <a class="button_link" href="#">Other</a>
+                <button onclick="savequote(1)">Funny</button>
+                <button onclick="savequote(2)">Inspirational</button>
+                <button onclick="savequote(3)">Spiritual</button>
+                <button onclick="savequote(4)">Famous</button>
+                <button onclick="savequote(5)">Other</button>
             </div>
         </div>
     </main>
@@ -48,6 +48,14 @@
     }
     function exit_modal() {
         document.getElementById('save_categories').style.display = "none";
+    }
+    function savequote(categoryid) {
+        let saved_quote = {categoryid, quote: <%= quote %>}
+        const Http = new XMLHttpRequest();
+        const url='/savequote';
+        Http.open("POST", url);
+        Http.setRequestHeader("Content-Type", "application/json");
+        Http.send(saved_quote);
     }
     </script>
 </body>
