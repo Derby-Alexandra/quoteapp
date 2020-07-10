@@ -143,6 +143,9 @@ button:active, .button_link:active {
     padding-right: 5px;
     margin-left: -15px;
 }
+#login_message {
+    display: none;
+}
 
 /*footer styles*/
 
