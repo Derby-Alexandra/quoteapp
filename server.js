@@ -55,7 +55,9 @@ app.post('/accountlogin', (req, res) => {
             get_quote(function(quotes) {
                 let random_index = Math.floor((Math.random() * quotes.length) + 1)
                 res.render('account', {quote: quotes[random_index].text, author: quotes[random_index].author})
-            })
+            }) else {
+                res.render('login')
+            }
         }
     });
 })
