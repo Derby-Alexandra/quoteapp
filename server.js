@@ -9,6 +9,7 @@ const connectionString = process.env.DATABASE_URL
 const pool = new Pool({connectionString: connectionString})
 const https = require('https');
 var session = require('express-session');
+app.use(session({secret: 'bunny hat'}));
 
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }))
