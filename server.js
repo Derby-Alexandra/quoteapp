@@ -47,7 +47,6 @@ app.post('/createaccount', (req, res) => {
         res.render('success')
     });  
 })
-
 app.post('/accountlogin', (req, res) => {
 //    console.log(req.body);
     var sql = `SELECT * FROM siteuser WHERE email = '${req.body.email}'`;
@@ -56,13 +55,11 @@ app.post('/accountlogin', (req, res) => {
             get_quote(function(quotes) {
                 let random_index = Math.floor((Math.random() * quotes.length) + 1)
                 res.render('account', {quote: quotes[random_index].text, author: quotes[random_index].author})
-            }
+            })
         }
-      }
-    });  
+    })
 })
-    
-    
+
    
 //
 //var sql = "SELECT * FROM siteuser";
