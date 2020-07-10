@@ -57,7 +57,8 @@ app.post('/accountlogin', (req, res) => {
                 res.render('account', {quote: quotes[random_index].text, author: quotes[random_index].author})
             }) 
         } else {
-            document.getElementById('login_message').style.display = 'block'
+            res.render('login')
+            document.getElementById("login_message").style.display = "block";
         }
     });
 })
