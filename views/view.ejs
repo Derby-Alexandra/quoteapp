@@ -21,44 +21,24 @@
     </header>
     <main>
         <div>
-            <button onclick="filter_quotes(0)">All</button>
-            <button onclick="filter_quotes(1)">Funny</button>
-            <button onclick="filter_quotes(2)">Inspirational</button>
-            <button onclick="filter_quotes(3)">Spiritual</button>
-            <button onclick="filter_quotes(4)">Famous</button>
-            <button onclick="filter_quotes(5)">Other</button>
+            <a class="button_link" href="#">All</a>
+            <a class="button_link" href="#">Funny</a>
+            <a class="button_link" href="#">Inspirational</a>
+            <a class="button_link" href="#">Spiritual</a>
+            <a class="button_link" href="#">Famous</a>
+            <a class="button_link" href="#">Other</a>
             <br>
             <br>
-            <div id="quoteList">
-                <% for (let i=0;i<quotes.length; i++) { %>
-                            <p data-categoryid="<%=quotes[i].categoryid %>">
-                <%= quotes[i].categoryname %> - <%= quotes[i].quote %>
-                            </p><br>
-                <% } %>
-            </div>
+<% for (let i=0;i<quotes.length; i++) { %>
+            <p id="user_quote" data-categoryid="<%=quotes[i].categoryid %>">
+<%= quotes[i].categoryname %> - <%= quotes[i].quote %>
+            </p><br>
+<% } %>
         </div>
         <br>
     </main>
     <footer>
         <p>&copy; 2020 | Alexandra Derby | Canada | <a href="http://www.byui.edu/online">BYU Idaho Online Learning</a></p>
     </footer>
-    <script>
-        function filter_quotes(categoryid) {
-            const quotes = <%= quotes %>
-            let filteredquotes = quotes
-            if (categoryid > 0) {
-                filteredquotes = quotes.filter(quote => quote.categoryid == categoryid)
-            }
-            let newlist = ''
-            filteredquotes.forEach(quote => {
-                newlist += `
-                <p data-categoryid="${quote.categoryid}">
-                    ${quote.categoryname} - ${quote.quote}
-                </p>
-                <br>`
-            })
-            document.getElementById('quoteList').innerHTML = newlist
-        }
-    </script>
 </body>
 </html>
