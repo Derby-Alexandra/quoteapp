@@ -44,7 +44,7 @@
     </footer>
     <script>
         function filter_quotes(categoryid) {
-            const quotes = <%= JSON.stringify(quotes) %>
+            const quotes = <%= quotes %>
             let filteredquotes = quotes
             if (categoryid > 0) {
                 filteredquotes = quotes.filter(quote => quote.categoryid == categoryid)
