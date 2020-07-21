@@ -46,7 +46,7 @@ app.get('/view', (req, res) => {
     pool.query(sql, function(err, result) {
         res.render('view', {quotes: result.rows})
     }) 
-}
+})
 app.get('/account', (req, res) => {
     get_quote(function(quotes) {
         let random_index = Math.floor((Math.random() * quotes.length) + 1)
