@@ -111,20 +111,6 @@ app.post('/savequote', (req, res) => {
     })
 })
 
-
-//
-//var sql = "SELECT * FROM siteuser";
-//pool.query(sql, function(err, result) {
-//    // If an error occurred...
-//    if (err) {
-//        console.log("Error in query: ")
-//        console.log(err)
-//    }
-//    // Log this to the console for debugging purposes.
-//    console.log("Back from DB with result:")
-//    console.log(result.rows)
-//});  
-
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 function get_quote(callback) {
