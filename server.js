@@ -42,7 +42,15 @@ app.get('/generate2', (req, res) => {
     })
 })
 app.get('/view', (req, res) => {
-    var sql = `SELECT q.quote, c.categoryname, c.categoryid FROM quote AS q JOIN category as c ON c.categoryid = q.categoryid JOIN userhasquote as u ON u.quoteid = ${user_id}`
+    var sql = `
+    SELECT 
+        q.quote, 
+        c.categoryname, 
+        c.categoryid 
+    FROM userhasquote AS u 
+    JOIN quote as q ON q.quoteid = u.quoteid 
+    JOIN category AS c ON c.categoryid = q.categoryid 
+    WHERE u.userid = ${req.session.user_id}`
     pool.query(sql, function(err, result) {
         res.render('view', {quotes: result.rows})
     }) 
