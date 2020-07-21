@@ -46,10 +46,10 @@ app.get('/view', (req, res) => {
     SELECT 
         q.quote, 
         c.categoryname, 
-        c.categoryid 
+        c.id AS categoryid
     FROM userhasquote AS u 
-    JOIN quote as q ON q.quoteid = u.quoteid 
-    JOIN category AS c ON c.categoryid = q.categoryid 
+    JOIN quote as q ON q.id = u.quoteid 
+    JOIN category AS c ON c.id = q.categoryid 
     WHERE u.userid = ${req.session.user_id}`
     pool.query(sql, function(err, result) {
         console.log("error: ", err)
