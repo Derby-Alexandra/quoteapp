@@ -42,8 +42,11 @@ app.get('/generate2', (req, res) => {
     })
 })
 app.get('/view', (req, res) => {
-    res.render('view')
-})
+    var sql = `SELECT q.quote, c.categoryname, c.categoryid FROM quote AS q JOIN category as c ON c.categoryid = q.categoryid JOIN userhasquote as u ON u.quoteid = ${user_id}`
+    pool.query(sql, function(err, result) {
+        res.render('view', {quotes: result.rows})
+    }) 
+}
 app.get('/account', (req, res) => {
     get_quote(function(quotes) {
         let random_index = Math.floor((Math.random() * quotes.length) + 1)
@@ -95,6 +98,7 @@ app.post('/savequote', (req, res) => {
         }
     })
 })
+
 
 //
 //var sql = "SELECT * FROM siteuser";

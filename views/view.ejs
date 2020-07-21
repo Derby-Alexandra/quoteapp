@@ -29,6 +29,12 @@
             <a class="button_link" href="#">Spiritual</a>
             <a class="button_link" href="#">Famous</a>
             <a class="button_link" href="#">Other</a>
+            <br>
+<% for (let i=0;i<quotes.length; i++) { %>
+            <p id="user_quote" data-categoryid="<%=quotes[i].categoryid %>">
+<%= quotes[i].categoryname %> - <%= quotes[i].quote %>
+            </p>
+<% } %>
         </div>
         <br>
     </main>
