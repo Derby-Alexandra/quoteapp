@@ -52,6 +52,7 @@ app.get('/view', (req, res) => {
     JOIN category AS c ON c.categoryid = q.categoryid 
     WHERE u.userid = ${req.session.user_id}`
     pool.query(sql, function(err, result) {
+        console.log("error: ", err)
         res.render('view', {quotes: result.rows})
     }) 
 })
