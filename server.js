@@ -33,7 +33,7 @@ app.get('/login', (req, res) => {
 })
 app.get('/logout', (req, res) => {
     req.session.user_id = undefined
-    res.render('/')
+    res.render('index')
 })
 app.get('/generate2', (req, res) => {
     get_quote(function(quotes) {
