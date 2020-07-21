@@ -37,10 +37,7 @@ app.get('/login', (req, res) => {
 })
 app.get('/logout', (req, res) => {
     req.session.user_id = undefined
-        get_quote(function(quotes) {
-        let random_index = Math.floor((Math.random() * quotes.length) + 1)
-        res.render('index', {quote: quotes[random_index].text, author: quotes[random_index].author})
-    })
+    res.render('/')
 })
 app.get('/generate2', (req, res) => {
     get_quote(function(quotes) {
