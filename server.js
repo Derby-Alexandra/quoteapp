@@ -10,7 +10,7 @@ const pool = new Pool({connectionString: connectionString})
 const https = require('https');
 var session = require('express-session');
 app.use(session({
-    secret: 'bunny hat',,
+    secret: 'bunny hat',
     resave: true,
     saveUninitialized: true
 }));
