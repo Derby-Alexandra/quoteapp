@@ -143,6 +143,10 @@ button:active, .button_link:active {
     padding-right: 5px;
     margin-left: -15px;
 }
+input {
+    font-family: 'Amatic SC', cursive;
+}
+    
 
 /*footer styles*/
 
